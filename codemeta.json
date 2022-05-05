@@ -1,0 +1,42 @@
+{
+    "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+    "@type": "SoftwareSourceCode",
+    "license": "https://www.nist.gov/open/license",
+    "dateCreated": "2022-05-05",
+    "name": "fair-principles-phase-field",
+    "version": "0.1.0",
+    "description": "FAIR Principles for Phase-Field Practitioners",
+    "applicationCategory": "phase-field",
+    "keywords": [
+        "phase-field",
+        "fair",
+        "fair-data",
+        "data-science"
+    ],
+    "programmingLanguage": [
+        "HTML",
+        "Markdown"
+    ],
+    "author": [
+        {
+            "@type": "Person",
+            "@id": "http://orcid.org/0000-0002-2920-8302",
+            "givenName": "Trevor",
+            "familyName": "Keller",
+            "honorificSuffix": "PhD",
+            "email": "trevor.keller@nist.gov",
+            "affiliation": {
+                "@type": "Organization",
+                "name": "National Institute of Standards and Technology",
+                "subOrganization": {
+                    "@type": "Organization",
+                    "name": "Material Measurement Laboratory",
+                    "department": {
+                        "@type": "Organization",
+                        "name": "Materials Science and Engineering Division"
+                    }
+                }
+            }
+        }
+    ]
+}
