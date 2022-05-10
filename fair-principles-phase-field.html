@@ -6,22 +6,122 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <style type="text/css">
       @import url(https://fonts.googleapis.com/css?family=Fira+Sans+Extra+Condensed);
-      @import url(https://fonts.googleapis.com/css?family=Fira+Sans:400,700,400italic);
-      @import url(https://fonts.googleapis.com/css?family=Fira+Code:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Fira+Sans);
+      @import url(https://fonts.googleapis.com/css?family=Fira+Code);
 
-      body { font-family: 'Fira Sans'; }
+      body {
+        font-family: 'Fira Sans';
+      }
       h1, h2, h3 {
         font-family: 'Fira Sans Extra Condensed';
-        font-weight: normal;
+        font-weight: 400;
+        margin-bottom: 0;
+      }
+      .remark-slide-content h1 { font-size: 3em; }
+      .remark-slide-content h2 { font-size: 2em; }
+      .remark-slide-content h3 { font-size: 1.6em; }
+      .footnote {
+        position: absolute;
+        bottom: 3em;
+      }
+      li p { line-height: 1.25em; }
+      .red { color: #fa0000; }
+      .large { font-size: 2em; }
+      a, a > code {
+        color: rgb(249, 38, 114);
+        text-decoration: none;
+      }
+      code {
+        background: #e7e8e2;
+        border-radius: 5px;
       }
       .remark-code, .remark-inline-code { font-family: 'Fira Code'; }
+      .remark-code-line-highlighted     { background-color: #373832;}
+      .pull-left {
+        float: left;
+        width: 47%;
+      }
+      .pull-right {
+        float: right;
+        width: 47%;
+      }
+      .pull-right ~ p {
+        clear: both;
+      }
+      #slideshow .slide .content code {
+        font-size: 0.8em;
+      }
+      #slideshow .slide .content pre code {
+        font-size: 0.9em;
+        padding: 15px;
+      }
+      .inverse {
+        background: #272822;
+        color: #777872;
+        text-shadow: 0 0 20px #333;
+      }
+      .inverse h1, .inverse h2 {
+        color: #f3f3f3;
+        line-height: 0.8em;
+      }
+
+      /* Slide-specific styling */
+      #slide-inverse .footnote {
+        bottom: 12px;
+        left: 20px;
+      }
+      #slide-how .slides {
+        font-size: 0.9em;
+        position: absolute;
+        top:  151px;
+        right: 140px;
+      }
+      #slide-how .slides h3 {
+        margin-top: 0.2em;
+      }
+      #slide-how .slides .first, #slide-how .slides .second {
+        padding: 1px 20px;
+        height: 90px;
+        width: 120px;
+        -moz-box-shadow: 0 0 10px #777;
+        -webkit-box-shadow: 0 0 10px #777;
+        box-shadow: 0 0 10px #777;
+      }
+      #slide-how .slides .first {
+        background: #fff;
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        z-index: 1;
+      }
+      #slide-how .slides .second {
+        position: relative;
+        background: #fff;
+        z-index: 0;
+      }
+
+      /* Two-column layout */
+      .left-column {
+        color: #777;
+        width: 20%;
+        height: 92%;
+        float: left;
+      }
+        .left-column h2:last-of-type, .left-column h3:last-child {
+          color: #000;
+        }
+      .right-column {
+        width: 75%;
+        float: right;
+        padding-top: 1em;
+      }
     </style>
   </head>
   <body>
     <textarea id="source">
-
-class: center, middle
-
+layout: true
+---
+.center[
 # FAIR Principles for Phase-Field Data
 
 **Trevor Keller**  
@@ -34,33 +134,140 @@ NIST Research Library
 
 CHiMaD Phase-Field Methods XIII  
 Northwestern University
-
+]
 ???
+[NOTE]:
+* You need active internet connection to access `remark.js`
+---
+.left-column[
+## What is FAIR?
+]
+.right-column[
+  .center[
+<img src="img/fair-acronym.png"
+     style="max-width: 100%;"
+     alt="FAIR: Free, Accessible, Interoperable, Reusable"/>
+]
 
-Notes:
-* Say your name
-* Pace yourself
+- [GO-FAIR.org](https://go-fair.org) offers a detailed intro to the
+  [FAIR Principles](https://www.go-fair.org/fair-principles/)
+  
+- FAIR data paper:
+
+  > Mark Wilkinson, *et al.* "The FAIR Guiding Principles for scientific
+  > data management and stewardship,” *Scientific Data* **3** (2016) 160018. 
+  > DOI: [10.1038/sdata.2016.18](https://doi.org/10.1038/sdata.2016.18)
+
+- Extension from "data" to include software:
+
+  > Daniel S. Katz *et al.* "FAIR4RS: Taking a fresh look at FAIR for research
+  > software," *Patterns* **2** (2021) 100222. DOI:
+  > [10.1016/j.patter.2021.100222](https://doi.org/10.1016/j.patter.2021.100222)
+]
+
+---
+.left-column[
+## What is FAIR?
+### **F**indable
+]
+.right-column[
+The first step in (re)using data is to find them. Metadata and data should be
+easy to find for both humans and computers.
+
+1. (Meta)data are assigned a globally unique and persistent identifier
+
+2. Data are described with rich metadata (defined by R1 below)
+
+3. Metadata clearly and explicitly include the identifier of the data they describe
+
+4. (Meta)data are registered or indexed in a searchable resource
+]
+---
+.left-column[
+## What is FAIR?
+### **F**indable
+### **A**ccessible
+]
+.right-column[
+Once the user finds the required data, they need to know how they can be
+accessed, possibly including authentication and authorization.
+
+1. (Meta)data are retrievable by their identifier using a standardized
+   communications protocol
+
+   1. The protocol is open, free, and universally implementable
+
+   2. The protocol allows for an authentication and authorisation procedure,
+      where necessary
+
+2. Metadata are accessible, even when the data are no longer available
+]
+---
+.left-column[
+## What is FAIR?
+### **F**indable
+### **A**ccessible
+### **I**nteroperable
+]
+.right-column[
+The data usually need to be integrated with other data. In addition, the data
+need to interoperate with applications or workflows for analysis, storage, and
+processing.
+
+1. (Meta)data use a formal, accessible, shared, and broadly applicable language
+   for knowledge representation.
+
+2. (Meta)data use vocabularies that follow FAIR principles
+
+3. (Meta)data include qualified references to other (meta)data
+]
+---
+.left-column[
+## What is FAIR?
+### **F**indable
+### **A**ccessible
+### **I**nteroperable
+### **R**eusable
+]
+.right-column[
+The ultimate goal of FAIR is to optimise the reuse of data. To achieve this,
+metadata and data should be well-described so that they can be replicated
+and/or combined in different settings.
+
+1. (Meta)data are richly described with a plurality of accurate and relevant attributes
+
+   1. (Meta)data are released with a clear and accessible data usage license
+
+   2. (Meta)data are associated with detailed provenance
+
+   3. (Meta)data meet domain-relevant community standards
+]
 
 ---
 
-# Agenda
-
-1. What is FAIR? Says who?
-2. Why make data FAIR?
-3. How does FAIR?
-4. Where does FAIR data live?
-5. When? Now!
+# Why make data FAIR?
 
 ???
 
-[NOTE]: You need active internet connection to access `remark.js`
+---
+
+# How does FAIR?
+
+???
 
 ---
 
-# Introduction
+# Where does FAIR data live?
 
-This is gonna go great!
+???
 
+---
+
+# When? Now!
+
+???
+
+...
     </textarea>
     <script src="https://remarkjs.com/downloads/remark-latest.min.js" type="text/javascript">
     </script>
