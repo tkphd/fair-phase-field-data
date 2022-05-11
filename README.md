@@ -14,6 +14,8 @@ Firefox:
 firefox "file://$(realpath fair-principles-phase-field.html)"
 ```
 
+[![DOI](https://zenodo.org/badge/489108751.svg)](https://zenodo.org/badge/latestdoi/489108751)
+
 ## Contact
 
 This presentation was written and delivered by Trevor Keller
