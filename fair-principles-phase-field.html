@@ -6,11 +6,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <style type="text/css">
       @import url(https://fonts.googleapis.com/css?family=Fira+Sans+Extra+Condensed);
-      @import url(https://fonts.googleapis.com/css?family=Fira+Sans);
+      @import url(https://fonts.googleapis.com/css?family=Helvetica);
       @import url(https://fonts.googleapis.com/css?family=Fira+Code);
 
       body {
-        font-family: 'Fira Sans';
+        font-family: 'Helvetica';
       }
       h1, h2, h3 {
         font-family: 'Fira Sans Extra Condensed';
@@ -134,24 +134,27 @@ NIST Research Library
 
 CHiMaD Phase-Field Methods XIII  
 Northwestern University
+
 ]
 ???
 [NOTE]:
+
 * You need active internet connection to access `remark.js`
+
 ---
 .left-column[
 ## What is FAIR?
 ]
 .right-column[
-  .center[
+.center[
 <img src="img/fair-acronym.png"
-     style="max-width: 100%;"
-     alt="FAIR: Free, Accessible, Interoperable, Reusable"/>
+     style="max-width: 95%;"
+     alt="FAIR: Findable, Accessible, Interoperable, Reusable"/>
 ]
 
-- [GO-FAIR.org](https://go-fair.org) offers a detailed intro to the
-  [FAIR Principles](https://www.go-fair.org/fair-principles/)
-  
+- [**GO-FAIR.org**](https://go-fair.org) offers detailed analysis of the
+  FAIR Principles with examples of usage and best practices
+
 - FAIR data paper:
 
   > Mark Wilkinson, *et al.* "The FAIR Guiding Principles for scientific
@@ -163,14 +166,75 @@ Northwestern University
   > Daniel S. Katz *et al.* "FAIR4RS: Taking a fresh look at FAIR for research
   > software," *Patterns* **2** (2021) 100222. DOI:
   > [10.1016/j.patter.2021.100222](https://doi.org/10.1016/j.patter.2021.100222)
+
+]
+---
+.left-column[
+## Why go FAIR?
+### Generally
+]
+.right-column[
+Releasing FAIR datasets can
+
+* increase visibility & citations
+
+* attract new partnerships, collaborations
+
+* enable new research questions to be raised & answered
+
+* satisfy funding agency requirements
+
+Check out the [**awesome-fair-data**](
+https://github.com/Materials-Data-Science-and-Informatics/awesome-fair-data)
+list by the  
+Helmholtz Metadata Collaboration on Github
+
+... or [**data.nist.gov**](https://data.nist.gov)
+
+.center[
+<img src="img/nist-data.png"
+     style="max-width: 90%;"
+     alt="NIST Data Portal"/>
 ]
 
+]
+---
+.left-column[
+## Why go FAIR?
+### Generally
+### Specifically
+]
+.right-column[
+PFHub is automatically built, and needs to
+
+* **F**ind your dataset quickly & with persistence
+  * `meta.yaml` filestores URL of dataset
+
+* **A**ccess usable data files without intervention
+  * URL must contain a robot-downloadable  
+    CSV or TSV file
+
+* v**I**sualize the fields it needs without surprises
+  * CSV columns must match specific names,  
+    or a human-generated mapping
+
+* **R**epeat the whole process to show off results
+  * PFHub does not maintain *content*, only the framework to build
+    the comparison charts
+
+Are we done?
+]
 ---
 .left-column[
 ## What is FAIR?
-### **F**indable
+### Findable
 ]
 .right-column[
+.center[
+<img src="img/f-logo.png"
+     style="max-width: 10%;"
+     alt="F: Findable"/>
+]
 The first step in (re)using data is to find them. Metadata and data should be
 easy to find for both humans and computers.
 
@@ -181,14 +245,20 @@ easy to find for both humans and computers.
 3. Metadata clearly and explicitly include the identifier of the data they describe
 
 4. (Meta)data are registered or indexed in a searchable resource
+
 ]
 ---
 .left-column[
 ## What is FAIR?
-### **F**indable
-### **A**ccessible
+### Findable
+### Accessible
 ]
 .right-column[
+.center[
+<img src="img/a-logo.png"
+     style="max-width: 10%;"
+     alt="A: Accessible"/>
+]
 Once the user finds the required data, they need to know how they can be
 accessed, possibly including authentication and authorization.
 
@@ -201,15 +271,21 @@ accessed, possibly including authentication and authorization.
       where necessary
 
 2. Metadata are accessible, even when the data are no longer available
+
 ]
 ---
 .left-column[
 ## What is FAIR?
-### **F**indable
-### **A**ccessible
-### **I**nteroperable
+### Findable
+### Accessible
+### Interoperable
 ]
 .right-column[
+.center[
+<img src="img/i-logo.png"
+     style="max-width: 10%;"
+     alt="I: Interoperable"/>
+]
 The data usually need to be integrated with other data. In addition, the data
 need to interoperate with applications or workflows for analysis, storage, and
 processing.
@@ -220,16 +296,22 @@ processing.
 2. (Meta)data use vocabularies that follow FAIR principles
 
 3. (Meta)data include qualified references to other (meta)data
+
 ]
 ---
 .left-column[
 ## What is FAIR?
-### **F**indable
-### **A**ccessible
-### **I**nteroperable
-### **R**eusable
+### Findable
+### Accessible
+### Interoperable
+### Reusable
 ]
 .right-column[
+.center[
+<img src="img/r-logo.png"
+     style="max-width: 10%;"
+     alt="R: Reusable"/>
+]
 The ultimate goal of FAIR is to optimise the reuse of data. To achieve this,
 metadata and data should be well-described so that they can be replicated
 and/or combined in different settings.
@@ -241,33 +323,73 @@ and/or combined in different settings.
    2. (Meta)data are associated with detailed provenance
 
    3. (Meta)data meet domain-relevant community standards
+
 ]
-
 ---
-
-# Why make data FAIR?
-
-???
-
+.left-column[
+## FAIR Summary 
+]
+.right-column[
+.center[
+<img src="img/fair-tiles.png"
+     style="max-width: 100%;"
+     alt="FAIR Tiles"/>
+]
+]
 ---
+.left-column[
+## How FAIR is my dataset?
+]
+.right-column[
+.center[
+ARDC FAIR Self-Assessment, <https://ardc.edu.au/fairdata>
 
-# How does FAIR?
+<img src="img/ardc.png"
+     style="max-width: 75%;"
+     alt="ARDC Self-Assessment"/>
 
-???
+F-UJI Automated FAIR Data Assessment, <https://f-uji.net>
 
+<img src="img/fuji.png"
+     style="max-width: 75%;"
+     alt="F-UJI Assessment"/>
+]
+]
 ---
+.left-column[
+## Live Demo
+### GitHub Gist
+]
+.right-column[
+Let's see what [ARDC](https://ardc.edu.au/fairdata) and [F-UJI](https://f-uji.net) have to say about one of my GitHub Gist
+uploads:
+.center[
+<https://gist.github.com/tkphd/c4523570be7a1615de36f40660d7d4e0>
+]
+.footnote[
+ARDC: <https://ardc.edu.au/fairdata>
 
-# Where does FAIR data live?
-
-???
-
+F-UJI: <https://f-uji.net>
+]
+]
 ---
+.left-column[
+## Live Demo
+### GitHub Gist
+### Zenodo
+]
+.right-column[
+Let's see what [ARDC](https://ardc.edu.au/fairdata) and
+[F-UJI](https://f-uji.net) have to say about the same data, on Zenodo:
+.center[
+<https://doi.org/10.5281/zenodo.1124941>
+]
+.footnote[
+ARDC: <https://ardc.edu.au/fairdata>
 
-# When? Now!
-
-???
-
-...
+F-UJI: <https://f-uji.net>
+]
+]
     </textarea>
     <script src="https://remarkjs.com/downloads/remark-latest.min.js" type="text/javascript">
     </script>
